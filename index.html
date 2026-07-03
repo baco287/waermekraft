@@ -321,9 +321,62 @@
   .foot-brand p { font-size: .92rem; max-width: 300px; margin-top: 18px; }
   .foot-bottom { border-top: 1px solid rgba(255,255,255,.1); padding: 24px 0; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: .82rem; }
 
+  /* ============ RECHNER ============ */
+  .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: stretch; }
+  .calc-panel { background: var(--white); border: 1px solid var(--line); border-radius: 20px; padding: 42px; box-shadow: var(--shadow-s); }
+  .calc-panel h3 { font-size: 1.35rem; margin-bottom: 28px; }
+  .cr { margin-bottom: 26px; }
+  .cr-head { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; margin-bottom: 10px; }
+  .cr-head label { font-size: .88rem; font-weight: 800; color: var(--ink); }
+  .cr-head output { font-size: .95rem; font-weight: 800; color: var(--petrol); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .cr input[type=range] {
+    width: 100%; height: 6px; border-radius: 4px; appearance: none; -webkit-appearance: none;
+    background: linear-gradient(90deg, var(--amber) var(--p, 50%), #e6e3da var(--p, 50%)); outline: none; cursor: pointer;
+  }
+  .cr input[type=range]::-webkit-slider-thumb {
+    appearance: none; -webkit-appearance: none; width: 22px; height: 22px; border-radius: 50%;
+    background: var(--white); border: 3px solid var(--amber); box-shadow: var(--shadow-s); transition: transform .2s;
+  }
+  .cr input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.15); }
+  .cr input[type=range]::-moz-range-thumb { width: 16px; height: 16px; border-radius: 50%; background: var(--white); border: 3px solid var(--amber); }
+  .cr select {
+    width: 100%; font-family: var(--font-body); font-size: .95rem; font-weight: 600; color: var(--ink);
+    padding: 13px 16px; border: 1.5px solid var(--line); border-radius: 9px; background: var(--paper); outline: none;
+  }
+  .cr select:focus { border-color: var(--petrol); }
+  .calc-toggle { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 18px; border: 1.5px solid var(--line); border-radius: 12px; background: var(--paper); cursor: pointer; }
+  .calc-toggle b { font-size: .9rem; }
+  .calc-toggle small { display: block; color: var(--muted); font-weight: 500; font-size: .78rem; }
+  .switch { position: relative; width: 48px; height: 27px; flex-shrink: 0; }
+  .switch input { opacity: 0; width: 0; height: 0; }
+  .switch .track { position: absolute; inset: 0; border-radius: 20px; background: #d8d5cc; transition: background .3s; }
+  .switch .track::after { content: ''; position: absolute; top: 3px; left: 3px; width: 21px; height: 21px; border-radius: 50%; background: var(--white); box-shadow: var(--shadow-s); transition: transform .3s; }
+  .switch input:checked + .track { background: var(--petrol); }
+  .switch input:checked + .track::after { transform: translateX(21px); }
+
+  .calc-result { background: linear-gradient(165deg, var(--petrol), var(--petrol-deep)); color: var(--white); border-radius: 20px; padding: 42px; display: flex; flex-direction: column; box-shadow: var(--shadow-m); }
+  .calc-result h3 { font-size: 1.35rem; margin-bottom: 28px; }
+  .bar-row { margin-bottom: 20px; }
+  .bar-row .bl { display: flex; justify-content: space-between; font-size: .86rem; font-weight: 700; margin-bottom: 8px; }
+  .bar-row .bl output { font-variant-numeric: tabular-nums; }
+  .bar-track { height: 13px; border-radius: 8px; background: rgba(255,255,255,.13); overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 8px; transition: width .55s cubic-bezier(.2,.7,.3,1); }
+  .bar-fill.old { background: linear-gradient(90deg, #c94f35, #d97b3a); }
+  .bar-fill.new { background: linear-gradient(90deg, #2f9e7d, #5cc9a7); }
+  .res-big { border-top: 1px solid rgba(255,255,255,.15); margin-top: 12px; padding-top: 24px; }
+  .res-big .rl { font-size: .84rem; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: rgba(255,255,255,.6); }
+  .res-big .rv { font-family: var(--font-display); font-size: clamp(2.6rem, 4.4vw, 3.6rem); font-weight: 700; color: #ecc27a; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .res-mini { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 22px; }
+  .res-mini > div { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); border-radius: 12px; padding: 16px 18px; }
+  .res-mini .mv { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .res-mini .ml { font-size: .78rem; color: rgba(255,255,255,.62); font-weight: 600; }
+  .calc-disclaimer { margin-top: auto; padding-top: 24px; font-size: .75rem; color: rgba(255,255,255,.5); }
+  .calc-cta { margin-top: 20px; }
+
   /* ============ RESPONSIVE ============ */
   @media (max-width: 1080px) {
     .nav-links { display: none; }
+    .calc-grid { grid-template-columns: 1fr; }
     .tech-grid { grid-template-columns: 1fr; gap: 44px; }
     .cards-3, .quote-row { grid-template-columns: 1fr; }
     .kpi-grid, .num-grid { grid-template-columns: repeat(2, 1fr); }
@@ -376,6 +429,7 @@
       <ul class="nav-links">
         <li><a href="#leistungen">Leistungen</a></li>
         <li><a href="#technik">Technik</a></li>
+        <li><a href="#rechner">Ersparnis-Rechner</a></li>
         <li><a href="#ablauf">Ablauf</a></li>
         <li><a href="#referenzen">Referenzen</a></li>
         <li><a href="#faq">FAQ</a></li>
@@ -649,6 +703,71 @@
   </div>
 </section>
 
+<!-- ============ ERSPARNIS-RECHNER ============ -->
+<section id="rechner">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <div class="kicker">Ersparnis-Rechner</div>
+      <h2>Was spart die Wärmepumpe bei Ihnen?</h2>
+      <p>Stellen Sie Ihre Werte ein – das Ergebnis wird sofort berechnet. Basierend auf Ihrer Jahresarbeitszahl (JAZ) und aktuellen Energiepreisen.</p>
+    </div>
+    <div class="calc-grid reveal">
+      <div class="calc-panel">
+        <h3>Ihre Angaben</h3>
+        <div class="cr">
+          <div class="cr-head"><label for="cHeating">Aktuelle Heizung</label></div>
+          <select id="cHeating">
+            <option value="gas" selected>Erdgas</option>
+            <option value="oil">Heizöl</option>
+          </select>
+        </div>
+        <div class="cr">
+          <div class="cr-head"><label for="cConsumption">Jahresverbrauch</label><output id="oConsumption">20.000 kWh</output></div>
+          <input type="range" id="cConsumption" min="5000" max="50000" step="500" value="20000">
+        </div>
+        <div class="cr">
+          <div class="cr-head"><label for="cPriceOld">Ihr Energiepreis</label><output id="oPriceOld">11,0 ct/kWh</output></div>
+          <input type="range" id="cPriceOld" min="7" max="20" step="0.5" value="11">
+        </div>
+        <div class="cr">
+          <div class="cr-head"><label for="cPriceEl">Strompreis (Wärmepumpentarif)</label><output id="oPriceEl">28,0 ct/kWh</output></div>
+          <input type="range" id="cPriceEl" min="18" max="40" step="0.5" value="28">
+        </div>
+        <div class="cr">
+          <div class="cr-head"><label for="cJaz">Effizienz der Wärmepumpe (JAZ)</label><output id="oJaz">4,0</output></div>
+          <input type="range" id="cJaz" min="2.5" max="5.5" step="0.1" value="4">
+        </div>
+        <label class="calc-toggle">
+          <span><b>Photovoltaik-Anlage einplanen</b><small>ca. 30 % des Wärmepumpen-Stroms vom eigenen Dach</small></span>
+          <span class="switch"><input type="checkbox" id="cPv" checked><span class="track"></span></span>
+        </label>
+      </div>
+
+      <div class="calc-result" aria-live="polite">
+        <h3>Ihr Ergebnis</h3>
+        <div class="bar-row">
+          <div class="bl"><span id="lOld">Heizkosten heute (Erdgas)</span><output id="oCostOld">2.200 €/Jahr</output></div>
+          <div class="bar-track"><div class="bar-fill old" id="bOld" style="width:100%"></div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bl"><span>Kosten mit Wärmepumpe</span><output id="oCostNew">990 €/Jahr</output></div>
+          <div class="bar-track"><div class="bar-fill new" id="bNew" style="width:45%"></div></div>
+        </div>
+        <div class="res-big">
+          <div class="rl">Ihre Ersparnis pro Jahr</div>
+          <div class="rv" id="oSave">1.210 €</div>
+        </div>
+        <div class="res-mini">
+          <div><div class="mv" id="oSave20">24.200 €</div><div class="ml">Ersparnis in 20 Jahren*</div></div>
+          <div><div class="mv" id="oCo2">3,5 t</div><div class="ml">CO₂-Einsparung pro Jahr</div></div>
+        </div>
+        <a href="#kontakt" class="btn btn-amber calc-cta">Ergebnis kostenlos prüfen lassen</a>
+        <div class="calc-disclaimer">*Richtwerte ohne Energiepreissteigerungen und Förderung. Kesselwirkungsgrad: Erdgas 90 %, Heizöl 85 %. CO₂-Faktoren: Erdgas 0,20 / Heizöl 0,27 / Strommix 0,36 kg pro kWh. Verbindliche Werte liefert unsere Vor-Ort-Analyse mit Heizlastberechnung.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ ZAHLEN ============ -->
 <section class="numbers" id="zahlen">
   <div class="container">
@@ -909,14 +1028,100 @@
     steps[cs].classList.add('active');
   }, 3200);
 
-  // contact form
+  // ===== Ersparnis-Rechner =====
+  const $ = id => document.getElementById(id);
+  const fuels = {
+    gas: { label: 'Erdgas', eff: 0.90, co2: 0.201 },
+    oil: { label: 'Heizöl', eff: 0.85, co2: 0.266 }
+  };
+  const CO2_STROM = 0.363, PV_SHARE = 0.30, PV_COST = 0.08;
+  const euro = n => fmt.format(Math.round(n / 10) * 10) + ' €';
+
+  function paintRange(el) {
+    const p = (el.value - el.min) / (el.max - el.min) * 100;
+    el.style.setProperty('--p', p + '%');
+  }
+
+  function calcUpdate() {
+    const fuel = fuels[$('cHeating').value];
+    const kwh = +$('cConsumption').value;
+    const pOld = +$('cPriceOld').value / 100;
+    const pEl = +$('cPriceEl').value / 100;
+    const jaz = +$('cJaz').value;
+    const pv = $('cPv').checked;
+
+    const costOld = kwh * pOld;
+    const heat = kwh * fuel.eff;              // nutzbare Wärme der alten Heizung
+    const wpKwh = heat / jaz;                 // Strombedarf der Wärmepumpe
+    const elPrice = pv ? (1 - PV_SHARE) * pEl + PV_SHARE * PV_COST : pEl;
+    const costNew = wpKwh * elPrice;
+    const save = costOld - costNew;
+    const co2Old = kwh * fuel.co2;
+    const co2New = wpKwh * (pv ? (1 - PV_SHARE) * CO2_STROM : CO2_STROM);
+    const co2Save = Math.max(0, (co2Old - co2New) / 1000);
+
+    $('oConsumption').textContent = fmt.format(kwh) + ' kWh';
+    $('oPriceOld').textContent = (+$('cPriceOld').value).toLocaleString('de-DE', { minimumFractionDigits: 1 }) + ' ct/kWh';
+    $('oPriceEl').textContent = (+$('cPriceEl').value).toLocaleString('de-DE', { minimumFractionDigits: 1 }) + ' ct/kWh';
+    $('oJaz').textContent = jaz.toLocaleString('de-DE', { minimumFractionDigits: 1 });
+    $('lOld').textContent = 'Heizkosten heute (' + fuel.label + ')';
+    $('oCostOld').textContent = euro(costOld) + '/Jahr';
+    $('oCostNew').textContent = euro(costNew) + '/Jahr';
+    $('oSave').textContent = (save < 0 ? '−' : '') + euro(Math.abs(save));
+    $('oSave20').textContent = euro(save * 20);
+    $('oCo2').textContent = co2Save.toLocaleString('de-DE', { maximumFractionDigits: 1 }) + ' t';
+
+    const maxCost = Math.max(costOld, costNew, 1);
+    $('bOld').style.width = (costOld / maxCost * 100) + '%';
+    $('bNew').style.width = (costNew / maxCost * 100) + '%';
+  }
+
+  ['cHeating', 'cConsumption', 'cPriceOld', 'cPriceEl', 'cJaz', 'cPv'].forEach(id => {
+    const el = $(id);
+    el.addEventListener('input', () => {
+      if (el.type === 'range') paintRange(el);
+      if (id === 'cHeating') { // sinnvollen Default-Preis je Energieträger setzen
+        $('cPriceOld').value = el.value === 'oil' ? 12 : 11;
+        paintRange($('cPriceOld'));
+      }
+      calcUpdate();
+    });
+    if (el.type === 'range') paintRange(el);
+  });
+  calcUpdate();
+
+  // ===== Kontaktformular (FormSubmit-Backend) =====
   const form = document.getElementById('contactForm');
-  form.addEventListener('submit', e => {
+  const FORM_ENDPOINT = 'https://formsubmit.co/ajax/' + ['karakuss', 'sezer'].join('.') + '@gmail' + '.com';
+  form.addEventListener('submit', async e => {
     e.preventDefault();
     if (!form.checkValidity()) { form.reportValidity(); return; }
-    document.getElementById('formSuccess').style.display = 'block';
-    form.querySelector('button').disabled = true;
-    form.querySelector('button').textContent = 'Anfrage gesendet ✓';
+    const btn = form.querySelector('button');
+    btn.disabled = true;
+    btn.textContent = 'Wird gesendet …';
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          _subject: 'Neue Anfrage über waermekraft (' + $('fTopic').value + ')',
+          _template: 'table',
+          _captcha: 'false',
+          Name: $('fName').value,
+          Telefon: $('fTel').value || '—',
+          'E-Mail': $('fMail').value,
+          Interesse: $('fTopic').value,
+          Nachricht: $('fMsg').value || '—'
+        })
+      });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      document.getElementById('formSuccess').style.display = 'block';
+      btn.textContent = 'Anfrage gesendet ✓';
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = 'Anfrage senden';
+      alert('Das Senden hat leider nicht geklappt. Bitte rufen Sie uns an (030 / 120 896 30) oder schreiben Sie an beratung@waermekraft.de.');
+    }
   });
 </script>
 </body>
