@@ -72,9 +72,29 @@
   /* ============ HERO ============ */
   .hero { position: relative; min-height: 92vh; display: flex; align-items: center; overflow: hidden; color: #fff; }
   .hero-bg { position: absolute; inset: 0; z-index: 0; }
-  .hero-bg img { width: 100%; height: 100%; object-fit: cover; animation: kenburns 26s ease-in-out infinite alternate; }
+  .hero-bg .hero-slide {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    opacity: 0; transition: opacity 1.4s ease;
+    animation: kenburns 26s ease-in-out infinite alternate;
+  }
+  .hero-bg .hero-slide.active { opacity: 1; }
   @keyframes kenburns { from { transform: scale(1) translateX(0); } to { transform: scale(1.12) translateX(-2%); } }
   .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(10,10,14,.93) 0%, rgba(10,10,14,.72) 45%, rgba(10,10,14,.28) 100%); }
+  .slide-ui { position: absolute; right: 28px; bottom: 128px; z-index: 2; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+  .slide-tag {
+    display: inline-flex; align-items: center; gap: 9px;
+    background: rgba(10,10,14,.55); backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,.2); border-radius: 999px;
+    padding: 9px 18px; font-size: .82rem; font-weight: 800; letter-spacing: .6px;
+  }
+  .slide-tag::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--pink); animation: blink 1.8s ease-in-out infinite; }
+  @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+  .slide-dots { display: flex; gap: 8px; }
+  .slide-dots button {
+    width: 26px; height: 5px; border-radius: 4px; border: none; cursor: pointer;
+    background: rgba(255,255,255,.35); transition: background .3s, width .3s; padding: 0;
+  }
+  .slide-dots button.active { background: var(--pink); width: 40px; }
   .hero-inner { position: relative; z-index: 1; padding: 200px 0 140px; max-width: 740px; }
   .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: .8rem; font-weight: 800; letter-spacing: 3.4px; text-transform: uppercase; color: var(--pink); margin-bottom: 26px; }
   .eyebrow::before { content: ''; width: 36px; height: 2.5px; background: var(--pink); }
@@ -372,6 +392,7 @@
     .opt-grid { grid-template-columns: 1fr; }
     .contact-info, .funnel { padding: 40px 26px; }
     .hero-inner { padding: 150px 0 160px; }
+    .slide-ui { display: none; }
     .mobile-cta { display: flex; }
     .wa-float { display: none; }
     body { padding-bottom: 54px; }
@@ -416,7 +437,17 @@
 <!-- ============ HERO ============ -->
 <header class="hero" id="top">
   <div class="hero-bg">
-    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=2000&q=80" alt="Photovoltaikanlage auf einem Hausdach bei Sonnenuntergang" fetchpriority="high">
+    <img class="hero-slide active" src="https://images.unsplash.com/flagged/photo-1566838616631-f2618f74a6a2?auto=format&fit=crop&w=2000&q=80" alt="Wohnhaus mit Photovoltaikanlage auf dem Dach" fetchpriority="high">
+    <img class="hero-slide" src="https://images.unsplash.com/photo-1776860150305-108ed577d7d4?auto=format&fit=crop&w=2000&q=80" alt="Wärmepumpen-Außeneinheit an einem Wohnhaus">
+    <img class="hero-slide" src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=2000&q=80" alt="Photovoltaikanlage bei Sonnenuntergang">
+  </div>
+  <div class="slide-ui">
+    <span class="slide-tag" id="slideTag">Photovoltaik fürs Eigenheim</span>
+    <div class="slide-dots" id="slideDots">
+      <button class="active" aria-label="Bild 1"></button>
+      <button aria-label="Bild 2"></button>
+      <button aria-label="Bild 3"></button>
+    </div>
   </div>
   <div class="container">
     <div class="hero-inner hero-copy">
@@ -1020,6 +1051,26 @@
   // sticky header
   const head = document.getElementById('siteHead');
   addEventListener('scroll', () => head.classList.toggle('scrolled', scrollY > 60), { passive: true });
+
+  // hero slideshow (Wärmepumpe & Solar im Wechsel)
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('#slideDots button');
+  const slideTags = ['Photovoltaik fürs Eigenheim', 'Wärmepumpe – flüsterleise & effizient', 'Ihr Strom. Ihre Wärme.'];
+  let slideIdx = 0, slideTimer;
+  function goSlide(n) {
+    slides[slideIdx].classList.remove('active');
+    dots[slideIdx].classList.remove('active');
+    slideIdx = n % slides.length;
+    slides[slideIdx].classList.add('active');
+    dots[slideIdx].classList.add('active');
+    document.getElementById('slideTag').textContent = slideTags[slideIdx];
+  }
+  function startSlides() {
+    clearInterval(slideTimer);
+    slideTimer = setInterval(() => goSlide(slideIdx + 1), 6000);
+  }
+  dots.forEach((d, i) => d.addEventListener('click', () => { goSlide(i); startSlides(); }));
+  startSlides();
 
   // scroll reveal
   const io = new IntersectionObserver(entries => {
