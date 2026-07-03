@@ -372,6 +372,20 @@
   .res-mini .ml { font-size: .78rem; color: rgba(255,255,255,.62); font-weight: 600; }
   .calc-disclaimer { margin-top: auto; padding-top: 24px; font-size: .75rem; color: rgba(255,255,255,.5); }
   .calc-cta { margin-top: 20px; }
+  .num-edit {
+    width: 104px; text-align: right; font-family: var(--font-body); font-size: .95rem; font-weight: 800;
+    color: var(--petrol); font-variant-numeric: tabular-nums;
+    border: 1.5px solid transparent; border-radius: 7px; background: transparent; padding: 3px 8px;
+    transition: border-color .25s, background .25s;
+  }
+  .num-edit:hover { border-color: var(--line); }
+  .num-edit:focus { border-color: var(--petrol); background: var(--white); outline: none; }
+  .num-edit::-webkit-outer-spin-button, .num-edit::-webkit-inner-spin-button { -webkit-appearance: none; }
+  .cr-head .unit { font-size: .95rem; font-weight: 800; color: var(--petrol); }
+  @keyframes resultPulse { from { box-shadow: 0 0 0 0 rgba(201,141,44,.55); } to { box-shadow: 0 0 0 26px rgba(201,141,44,0); } }
+  .calc-result.pulse { animation: resultPulse .9s ease-out; }
+  @keyframes numFlash { 0%, 45% { color: var(--white); text-shadow: 0 0 18px rgba(255,255,255,.35); } 100% { color: #ecc27a; text-shadow: none; } }
+  .rv.flash { animation: numFlash .75s ease-out; }
 
   /* ============ RESPONSIVE ============ */
   @media (max-width: 1080px) {
@@ -722,7 +736,7 @@
           </select>
         </div>
         <div class="cr">
-          <div class="cr-head"><label for="cConsumption">Jahresverbrauch</label><output id="oConsumption">20.000 kWh</output></div>
+          <div class="cr-head"><label for="cConsumption">Jahresverbrauch</label><span><input type="number" inputmode="numeric" class="num-edit" id="cConsumptionNum" min="5000" max="50000" step="500" value="20000" aria-label="Jahresverbrauch in kWh eingeben"><span class="unit">kWh</span></span></div>
           <input type="range" id="cConsumption" min="5000" max="50000" step="500" value="20000">
         </div>
         <div class="cr">
@@ -741,6 +755,7 @@
           <span><b>Photovoltaik-Anlage einplanen</b><small>ca. 30 % des Wärmepumpen-Stroms vom eigenen Dach</small></span>
           <span class="switch"><input type="checkbox" id="cPv" checked><span class="track"></span></span>
         </label>
+        <button type="button" class="btn btn-petrol" id="calcBtn" style="width:100%;margin-top:24px">Ergebnis berechnen</button>
       </div>
 
       <div class="calc-result" aria-live="polite">
@@ -1060,14 +1075,21 @@
     const co2New = wpKwh * (pv ? (1 - PV_SHARE) * CO2_STROM : CO2_STROM);
     const co2Save = Math.max(0, (co2Old - co2New) / 1000);
 
-    $('oConsumption').textContent = fmt.format(kwh) + ' kWh';
+    if (document.activeElement !== $('cConsumptionNum')) $('cConsumptionNum').value = kwh;
     $('oPriceOld').textContent = (+$('cPriceOld').value).toLocaleString('de-DE', { minimumFractionDigits: 1 }) + ' ct/kWh';
     $('oPriceEl').textContent = (+$('cPriceEl').value).toLocaleString('de-DE', { minimumFractionDigits: 1 }) + ' ct/kWh';
     $('oJaz').textContent = jaz.toLocaleString('de-DE', { minimumFractionDigits: 1 });
     $('lOld').textContent = 'Heizkosten heute (' + fuel.label + ')';
     $('oCostOld').textContent = euro(costOld) + '/Jahr';
     $('oCostNew').textContent = euro(costNew) + '/Jahr';
-    $('oSave').textContent = (save < 0 ? '−' : '') + euro(Math.abs(save));
+    const saveEl = $('oSave');
+    const newSaveText = (save < 0 ? '−' : '') + euro(Math.abs(save));
+    if (saveEl.textContent !== newSaveText && calcReady) {
+      saveEl.classList.remove('flash');
+      void saveEl.offsetWidth; // Animation neu starten
+      saveEl.classList.add('flash');
+    }
+    saveEl.textContent = newSaveText;
     $('oSave20').textContent = euro(save * 20);
     $('oCo2').textContent = co2Save.toLocaleString('de-DE', { maximumFractionDigits: 1 }) + ' t';
 
@@ -1076,6 +1098,7 @@
     $('bNew').style.width = (costNew / maxCost * 100) + '%';
   }
 
+  let calcReady = false;
   ['cHeating', 'cConsumption', 'cPriceOld', 'cPriceEl', 'cJaz', 'cPv'].forEach(id => {
     const el = $(id);
     el.addEventListener('input', () => {
@@ -1088,7 +1111,39 @@
     });
     if (el.type === 'range') paintRange(el);
   });
+
+  // kWh direkt eintippen (synchron zum Slider)
+  $('cConsumptionNum').addEventListener('input', () => {
+    const v = +$('cConsumptionNum').value;
+    if (!v) return;
+    $('cConsumption').value = Math.min(50000, Math.max(5000, v));
+    paintRange($('cConsumption'));
+    calcUpdate();
+  });
+  function clampConsumption() {
+    const v = Math.min(50000, Math.max(5000, +$('cConsumptionNum').value || 20000));
+    $('cConsumptionNum').value = v;
+    $('cConsumption').value = v;
+    paintRange($('cConsumption'));
+    calcUpdate();
+  }
+  $('cConsumptionNum').addEventListener('blur', clampConsumption);
+  $('cConsumptionNum').addEventListener('change', clampConsumption);
+
+  // Berechnen-Button: zum Ergebnis scrollen und hervorheben
+  $('calcBtn').addEventListener('click', () => {
+    calcUpdate();
+    const res = document.querySelector('.calc-result');
+    res.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    res.classList.remove('pulse');
+    void res.offsetWidth;
+    res.classList.add('pulse');
+    const sv = $('oSave');
+    sv.classList.remove('flash'); void sv.offsetWidth; sv.classList.add('flash');
+  });
+
   calcUpdate();
+  calcReady = true;
 
   // ===== Kontaktformular (FormSubmit-Backend) =====
   const form = document.getElementById('contactForm');
