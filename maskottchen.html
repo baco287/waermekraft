@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wärmi – Maskottchen-Vorschau | Wärmekraft</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Manrope', sans-serif; background: #f6f6f8; color: #0d0d12; padding: 60px 24px; }
+  .wrap { max-width: 1000px; margin: 0 auto; }
+  h1 { font-weight: 800; letter-spacing: -1px; margin-bottom: 8px; }
+  h1 em { font-style: normal; color: #fb4d8c; }
+  .sub { color: #63636e; margin-bottom: 48px; }
+  .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px; }
+  .card { background: #fff; border: 1px solid #e9e9ee; border-radius: 18px; padding: 32px; text-align: center; box-shadow: 0 2px 10px rgba(13,13,18,.05); }
+  .card img { width: 180px; height: auto; margin: 0 auto 18px; animation: bob 3.4s ease-in-out infinite; }
+  .card:nth-child(2) img { animation-delay: .5s; }
+  .card:nth-child(3) img { animation-delay: 1s; }
+  @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  .card b { display: block; font-size: 1.05rem; }
+  .card small { color: #63636e; }
+  .dark { background: #15151b; border-radius: 18px; padding: 36px; display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
+  .dark img { height: 120px; }
+  .dark span { color: rgba(255,255,255,.7); font-size: .9rem; font-weight: 600; }
+  .sizes { display: flex; align-items: flex-end; gap: 28px; margin-top: 40px; background: #fff; border: 1px solid #e9e9ee; border-radius: 18px; padding: 32px; }
+  .sizes img { width: auto; }
+  .sizes span { font-size: .8rem; color: #63636e; font-weight: 600; }
+  @media (max-width: 720px) { .row { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Das ist <em>Wärmi</em> 🔥</h1>
+  <p class="sub">Maskottchen-Vorschau für Wärmekraft – kleine Flamme, Farbwelt aus dem Logo (Pink/Schwarz), skalierbar als SVG.</p>
+
+  <div class="row">
+    <div class="card">
+      <img src="assets/waermi.svg" alt="Wärmi winkt">
+      <b>Wärmi klassisch</b>
+      <small>Winkend – für Hero, Kontakt &amp; Begrüßung</small>
+    </div>
+    <div class="card">
+      <img src="assets/waermi-daumen.svg" alt="Wärmi mit Daumen hoch">
+      <b>Wärmi Daumen hoch</b>
+      <small>Für Erfolgsmeldungen &amp; Danke-Seite</small>
+    </div>
+    <div class="card">
+      <img src="assets/waermi-solar.svg" alt="Wärmi mit Sonnenbrille und Solarmodul">
+      <b>Solar-Wärmi</b>
+      <small>Mit Sonnenbrille &amp; Mini-Modul – für PV-Themen</small>
+    </div>
+  </div>
+
+  <div class="dark">
+    <img src="assets/waermi.svg" alt="Wärmi auf dunklem Hintergrund">
+    <span>Funktioniert auch auf dunklen Flächen (Zahlen-Sektion, Footer, Rechner-Ergebnis)</span>
+  </div>
+
+  <div class="sizes">
+    <img src="assets/waermi.svg" style="width:160px" alt="">
+    <img src="assets/waermi.svg" style="width:96px" alt="">
+    <img src="assets/waermi.svg" style="width:56px" alt="">
+    <img src="assets/waermi.svg" style="width:32px" alt="">
+    <span>Skaliert verlustfrei bis Icon-Größe</span>
+  </div>
+</div>
+</body>
+</html>

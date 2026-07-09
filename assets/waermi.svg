@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="280" viewBox="0 0 240 280">
+  <defs>
+    <linearGradient id="bodyG" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#ff6ba3"/>
+      <stop offset="1" stop-color="#e02970"/>
+    </linearGradient>
+    <linearGradient id="innerG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd2e3"/>
+      <stop offset="1" stop-color="#ff9cc2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Schatten -->
+  <ellipse cx="120" cy="262" rx="62" ry="10" fill="#0d0d12" opacity=".08"/>
+
+  <!-- winkender Arm (hinter dem Körper) -->
+  <path d="M64 154 C 46 142 38 124 44 104" stroke="#e02970" stroke-width="17" stroke-linecap="round" fill="none"/>
+
+  <!-- Flammenkörper -->
+  <path d="M120 24
+           C 127 50 146 64 160 86
+           C 175 110 187 134 187 164
+           C 187 216 157 252 120 252
+           C 83 252 53 216 53 164
+           C 53 134 65 110 80 86
+           C 94 64 113 50 120 24 Z"
+        fill="url(#bodyG)"/>
+
+  <!-- kleine Seitenflamme -->
+  <path d="M158 60 C 166 70 176 74 178 88 C 170 84 162 78 158 60 Z" fill="#ff6ba3"/>
+
+  <!-- heller Bauch / Gesichtsfläche -->
+  <path d="M120 84
+           C 134 106 156 124 156 162
+           C 156 198 140 224 120 224
+           C 100 224 84 198 84 162
+           C 84 124 106 106 120 84 Z"
+        fill="url(#innerG)"/>
+
+  <!-- Augen -->
+  <ellipse cx="104" cy="152" rx="12.5" ry="14.5" fill="#ffffff"/>
+  <ellipse cx="136" cy="152" rx="12.5" ry="14.5" fill="#ffffff"/>
+  <circle cx="106.5" cy="155" r="6" fill="#0d0d12"/>
+  <circle cx="138.5" cy="155" r="6" fill="#0d0d12"/>
+  <circle cx="108.5" cy="152.5" r="2" fill="#ffffff"/>
+  <circle cx="140.5" cy="152.5" r="2" fill="#ffffff"/>
+
+  <!-- Wangen -->
+  <circle cx="90" cy="174" r="7" fill="#fb4d8c" opacity=".45"/>
+  <circle cx="150" cy="174" r="7" fill="#fb4d8c" opacity=".45"/>
+
+  <!-- Lächeln -->
+  <path d="M102 182 Q120 198 138 182" stroke="#0d0d12" stroke-width="5" stroke-linecap="round" fill="none"/>
+
+  <!-- rechter Arm -->
+  <path d="M178 162 C 190 174 193 188 187 200" stroke="#e02970" stroke-width="17" stroke-linecap="round" fill="none"/>
+
+  <!-- Füße -->
+  <ellipse cx="100" cy="254" rx="17" ry="9" fill="#0d0d12"/>
+  <ellipse cx="140" cy="254" rx="17" ry="9" fill="#0d0d12"/>
+</svg>
