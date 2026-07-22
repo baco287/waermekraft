@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="206" height="36" viewBox="0 0 206 36" role="img" aria-label="Heizwechsel Logo">
+  <circle cx="18" cy="18" r="16" fill="#ffc107"/>
+  <g stroke="#0d0d12" stroke-width="3" stroke-linecap="round" fill="none">
+    <path d="M10 12.5 h10.5"/>
+    <path d="M26 23.5 h-10.5"/>
+  </g>
+  <path d="M21 8.5 l6.5 4 -6.5 4 z" fill="#0d0d12"/>
+  <path d="M15 19.5 l-6.5 4 6.5 4 z" fill="#0d0d12"/>
+  <text x="42" y="24.5" font-family="Manrope, 'Segoe UI', system-ui, sans-serif" font-size="19" font-weight="800" letter-spacing="-0.5" fill="#0d0d12">Heiz<tspan fill="#dda400">wechsel</tspan></text>
+</svg>

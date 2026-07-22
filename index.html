@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wärmekraft – Wärmepumpen &amp; Photovoltaik | Strom. Wärme. Zukunft.</title>
-<meta name="description" content="Wärmekraft plant und installiert Ihre Wärmepumpe und Photovoltaikanlage – mit bis zu 70 % Förderung, Festpreis und regionalen Fachfirmen. Jetzt in 2 Minuten kostenloses Angebot anfragen.">
-<link rel="icon" type="image/png" href="assets/logo.png">
+<title>Heizwechsel – Der kostenlose Erst-Check für Wärmepumpe, Photovoltaik &amp; neue Heizung</title>
+<link rel="canonical" href="https://heizwechsel.de/">
+<meta name="description" content="Prüfen Sie in 2 Minuten, ob sich Wärmepumpe, Photovoltaik oder eine neue Heizung für Ihr Haus lohnt. Kostenlos, unverbindlich, ohne Vertreterbesuch – mit geprüftem Fachpartner für die Umsetzung.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Ccircle cx='18' cy='18' r='16' fill='%23ffc107'/%3E%3Cpath d='M10.5 18.5l5 5 10-10' fill='none' stroke='%230d0d12' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,9 +16,9 @@
     --ink: #0d0d12;
     --charcoal: #15151b;
     --charcoal-2: #1d1d25;
-    --pink: #fb4d8c;
-    --pink-deep: #e02970;
-    --pink-soft: #fef0f5;
+    --pink: #ffc107;
+    --pink-deep: #b58900;
+    --pink-soft: #fff8e1;
     --paper: #ffffff;
     --soft: #f6f6f8;
     --line: #e9e9ee;
@@ -34,7 +35,7 @@
   html { scroll-behavior: smooth; }
   body { font-family: var(--font); color: var(--ink); background: var(--paper); line-height: 1.65; overflow-x: hidden; }
   img { display: block; max-width: 100%; }
-  ::selection { background: var(--pink); color: var(--paper); }
+  ::selection { background: var(--pink); color: var(--ink); }
 
   h1, h2, h3 { font-weight: 800; line-height: 1.1; letter-spacing: -1px; }
   .container { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
@@ -61,8 +62,8 @@
     font-family: var(--font); font-size: .97rem; font-weight: 800; text-decoration: none;
     transition: transform .25s, box-shadow .25s, background .25s, color .25s;
   }
-  .btn-pink { background: var(--pink); color: #fff; box-shadow: 0 10px 28px rgba(251,77,140,.35); }
-  .btn-pink:hover { background: var(--pink-deep); transform: translateY(-2px); box-shadow: 0 14px 34px rgba(251,77,140,.45); }
+  .btn-pink { background: var(--pink); color: var(--ink); box-shadow: 0 10px 28px rgba(255,193,7,.35); }
+  .btn-pink:hover { background: var(--pink-deep); transform: translateY(-2px); box-shadow: 0 14px 34px rgba(255,193,7,.45); }
   .btn-dark { background: var(--ink); color: #fff; }
   .btn-dark:hover { background: var(--charcoal-2); transform: translateY(-2px); box-shadow: var(--shadow-m); }
   .btn-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.5); }
@@ -132,7 +133,7 @@
   section { padding: 110px 0; }
   .sec-head { max-width: 700px; margin-bottom: 60px; }
   .sec-head.center { margin-left: auto; margin-right: auto; text-align: center; }
-  .kicker { display: inline-flex; align-items: center; gap: 10px; font-size: .76rem; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--pink); margin-bottom: 18px; }
+  .kicker { display: inline-flex; align-items: center; gap: 10px; font-size: .76rem; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--pink-deep); margin-bottom: 18px; }
   .kicker::before { content: ''; width: 30px; height: 2.5px; background: var(--pink); }
   .sec-head.center .kicker::after { content: ''; width: 30px; height: 2.5px; background: var(--pink); }
   .sec-head h2 { font-size: clamp(2rem, 3.8vw, 2.9rem); margin-bottom: 18px; color: var(--ink); }
@@ -185,7 +186,7 @@
   .c-step h4 { font-size: 1.02rem; font-weight: 800; margin-bottom: 3px; }
   .c-step p { font-size: .89rem; color: var(--muted); }
   .c-step.active { border-color: var(--pink); box-shadow: var(--shadow-m); }
-  .c-step.active .cn { background: var(--pink); color: #fff; }
+  .c-step.active .cn { background: var(--pink); color: var(--ink); }
 
   .tech-note { display: flex; align-items: center; gap: 14px; margin-top: 30px; padding: 18px 22px; border-radius: 12px; background: var(--pink-soft); font-size: .92rem; font-weight: 700; color: var(--ink); }
 
@@ -236,14 +237,14 @@
   .num-edit:focus { border-color: var(--pink); background: #fff; outline: none; }
   .num-edit::-webkit-outer-spin-button, .num-edit::-webkit-inner-spin-button { -webkit-appearance: none; }
   .cr-head .unit { font-size: .95rem; font-weight: 800; color: var(--pink-deep); }
-  @keyframes resultPulse { from { box-shadow: 0 0 0 0 rgba(251,77,140,.6); } to { box-shadow: 0 0 0 26px rgba(251,77,140,0); } }
+  @keyframes resultPulse { from { box-shadow: 0 0 0 0 rgba(255,193,7,.6); } to { box-shadow: 0 0 0 26px rgba(255,193,7,0); } }
   .calc-result.pulse { animation: resultPulse .9s ease-out; }
   @keyframes numFlash { 0%, 45% { color: #fff; text-shadow: 0 0 18px rgba(255,255,255,.35); } 100% { color: var(--pink); text-shadow: none; } }
   .rv.flash { animation: numFlash .75s ease-out; }
 
   /* ============ ZAHLEN ============ */
   .numbers { background: linear-gradient(160deg, var(--charcoal), var(--ink)); color: #fff; position: relative; overflow: hidden; }
-  .numbers::before { content: ''; position: absolute; right: -140px; top: -140px; width: 480px; height: 480px; border-radius: 50%; background: radial-gradient(circle, rgba(251,77,140,.2), transparent 65%); }
+  .numbers::before { content: ''; position: absolute; right: -140px; top: -140px; width: 480px; height: 480px; border-radius: 50%; background: radial-gradient(circle, rgba(255,193,7,.2), transparent 65%); }
   .numbers .sec-head h2 { color: #fff; }
   .numbers .sec-head p { color: rgba(255,255,255,.66); }
   .num-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; position: relative; }
@@ -257,7 +258,7 @@
   .timeline::before { content: ''; position: absolute; top: 27px; left: 4%; right: 4%; height: 2px; background: var(--line); }
   .t-step { position: relative; }
   .t-step .tn { position: relative; z-index: 1; width: 54px; height: 54px; border-radius: 50%; background: var(--paper); border: 2px solid var(--line); display: grid; place-items: center; font-weight: 800; margin-bottom: 20px; transition: border-color .4s, background .4s, color .4s; font-size: 1.05rem; }
-  .t-step:hover .tn { border-color: var(--pink); background: var(--pink); color: #fff; }
+  .t-step:hover .tn { border-color: var(--pink); background: var(--pink); color: var(--ink); }
   .t-step h4 { font-size: 1.02rem; font-weight: 800; margin-bottom: 8px; }
   .t-step p { font-size: .88rem; color: var(--muted); }
 
@@ -321,7 +322,7 @@
   .opt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .opt { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; padding: 20px; border: 1.5px solid var(--line); border-radius: 14px; background: var(--soft); cursor: pointer; font-family: var(--font); text-align: left; transition: border-color .25s, background .25s, transform .2s, box-shadow .25s; }
   .opt:hover { border-color: var(--pink); background: var(--pink-soft); transform: translateY(-2px); box-shadow: var(--shadow-s); }
-  .opt.selected { border-color: var(--pink); background: var(--pink-soft); box-shadow: 0 0 0 3px rgba(251,77,140,.15); }
+  .opt.selected { border-color: var(--pink); background: var(--pink-soft); box-shadow: 0 0 0 3px rgba(255,193,7,.15); }
   .opt .oi { font-size: 1.5rem; }
   .opt b { font-size: .95rem; font-weight: 800; }
   .opt small { color: var(--muted); font-size: .78rem; font-weight: 600; }
@@ -334,7 +335,7 @@
     border: 1.5px solid var(--line); border-radius: 10px; background: var(--soft);
     outline: none; transition: border-color .25s, box-shadow .25s, background .25s;
   }
-  .f-field input:focus, .f-field select:focus { border-color: var(--pink); box-shadow: 0 0 0 3px rgba(251,77,140,.12); background: #fff; }
+  .f-field input:focus, .f-field select:focus { border-color: var(--pink); box-shadow: 0 0 0 3px rgba(255,193,7,.12); background: #fff; }
   .fnav { display: flex; gap: 14px; margin-top: 26px; }
   .fnav .btn { flex: 1; }
   .btn-back { background: var(--soft); color: var(--muted); border: 1.5px solid var(--line); flex: 0 0 auto !important; padding-inline: 20px; }
@@ -367,7 +368,7 @@
   .mobile-cta a { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 15px 8px; font-size: .85rem; font-weight: 800; text-decoration: none; }
   .mobile-cta .m-call { color: var(--ink); }
   .mobile-cta .m-wa { color: var(--wa); border-left: 1px solid var(--line); border-right: 1px solid var(--line); }
-  .mobile-cta .m-offer { background: var(--pink); color: #fff; }
+  .mobile-cta .m-offer { background: var(--pink); color: var(--ink); }
 
   /* ============ RESPONSIVE ============ */
   @media (max-width: 1080px) {
@@ -409,27 +410,26 @@
 <div class="site-head" id="siteHead">
   <div class="topbar">
     <div class="container topbar-inner">
-      <span>Strom. Wärme. Zukunft. – Ihr Weg zur Energieunabhängigkeit</span>
+      <span>Erst prüfen. Dann entscheiden. – Der kostenlose Erst-Check für Ihr Zuhause</span>
       <div class="tb-right">
         <span>Mo–Fr 9–16 Uhr</span>
-        <a href="tel:+496934878599">069 / 348 785 99</a>
-        <a class="wa-link" href="https://wa.me/4915119492409" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="tel:+4917625041651">0176 / 250 416 51</a>
       </div>
     </div>
   </div>
   <nav>
     <div class="container nav-inner">
-      <a class="logo" href="#top" aria-label="Wärmekraft – Startseite">
-        <img src="assets/logo.png" alt="Wärmekraft Logo" width="170" height="34">
+      <a class="logo" href="#top" aria-label="Heizwechsel – Startseite">
+        <img src="assets/heizwechsel-logo.svg" alt="Heizwechsel Logo" width="206" height="36">
       </a>
       <ul class="nav-links">
-        <li><a href="#leistungen">Leistungen</a></li>
+        <li><a href="#leistungen">Lösungen</a></li>
         <li><a href="#technik">Technik</a></li>
         <li><a href="#rechner">Ersparnis-Rechner</a></li>
-        <li><a href="#ablauf">Ablauf</a></li>
+        <li><a href="#ablauf">So funktioniert's</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
-      <a href="#kontakt" class="btn btn-pink nav-cta">Kostenloses Angebot</a>
+      <a href="#kontakt" class="btn btn-pink nav-cta">Kostenlosen Check starten</a>
     </div>
   </nav>
 </div>
@@ -451,26 +451,26 @@
   </div>
   <div class="container">
     <div class="hero-inner hero-copy">
-      <div class="eyebrow">Strom. Wärme. Zukunft.</div>
-      <h1>Ihre Wärmepumpe.<br><em>Geplant, gefördert, installiert.</em></h1>
-      <p class="lead">Wärmekraft bringt Sie in die Energieunabhängigkeit – mit Wärmepumpe, Photovoltaik und regionalen Fachfirmen. Bis zu 70 % Förderung, Festpreis, ein Ansprechpartner.</p>
+      <div class="eyebrow">Erst prüfen. Dann entscheiden.</div>
+      <h1>Alte Heizung raus, Zukunft rein.<br><em>Was lohnt sich für Ihr Haus?</em></h1>
+      <p class="lead">Der kostenlose Erst-Check für Wärmepumpe, Photovoltaik oder eine neue Heizung. Unverbindlich, ohne Vertreterbesuch – und mit geprüftem Fachpartner, wenn Sie umsetzen möchten.</p>
       <div class="hero-ctas">
-        <a href="#kontakt" class="btn btn-pink">Kostenloses Angebot in 2 Minuten</a>
+        <a href="#kontakt" class="btn btn-pink">Jetzt kostenlosen Check starten</a>
         <a href="#rechner" class="btn btn-outline">Ersparnis berechnen</a>
       </div>
       <div class="hero-trust">
-        <span>Bis zu 70 % Förderung</span>
-        <span>Festpreis-Garantie</span>
-        <span>16+ Standorte in Deutschland</span>
+        <span>100 % kostenlos</span>
+        <span>Unverbindlich</span>
+        <span>Antwort innerhalb von 24 h</span>
       </div>
     </div>
   </div>
   <div class="hero-kpis">
     <div class="container kpi-grid">
-      <div class="kpi"><div class="v"><span data-count="16">0</span>+</div><div class="l">Standorte in Deutschland</div></div>
-      <div class="kpi"><div class="v"><span data-count="70">0</span>&nbsp;%</div><div class="l">max. staatliche Förderung</div></div>
-      <div class="kpi"><div class="v"><span data-count="70">0</span>&nbsp;%</div><div class="l">weniger Heizkosten möglich</div></div>
-      <div class="kpi"><div class="v">4,9<span>/5</span></div><div class="l">Ø Kundenbewertung</div></div>
+      <div class="kpi"><div class="v"><span data-count="2">0</span>&nbsp;Min.</div><div class="l">dauert der Online-Check</div></div>
+      <div class="kpi"><div class="v"><span data-count="70">0</span>&nbsp;%</div><div class="l">max. staatliche Förderung (BEG)</div></div>
+      <div class="kpi"><div class="v"><span data-count="0">0</span>&nbsp;€</div><div class="l">Kosten für Check &amp; Ersteinschätzung</div></div>
+      <div class="kpi"><div class="v"><span data-count="24">0</span>&nbsp;h</div><div class="l">bis zu Ihrer Rückmeldung</div></div>
     </div>
   </div>
 </header>
@@ -478,7 +478,7 @@
 <!-- ============ MARKEN ============ -->
 <div class="brands">
   <div class="container brands-inner">
-    <span class="cap">Wir verbauen Markenqualität von</span>
+    <span class="cap">Unser Fachpartner verbaut Markenqualität von</span>
     <div class="brand-logos">
       <span>Viessmann</span><span>Vaillant</span><span>Daikin</span><span>Bosch</span><span>SMA</span><span>BYD</span>
     </div>
@@ -489,9 +489,9 @@
 <section id="leistungen">
   <div class="container">
     <div class="sec-head reveal">
-      <div class="kicker">Unsere Leistungen</div>
-      <h2>Ein System. Drei Bausteine.<br>Alles aus einer Hand.</h2>
-      <p>Wärmepumpe, Photovoltaik und Speicher greifen bei uns ineinander – geplant von Experten, montiert von regionalen Fachfirmen.</p>
+      <div class="kicker">Die Lösungen</div>
+      <h2>Drei Wege zu niedrigeren<br>Energiekosten.</h2>
+      <p>Ob Wärmepumpe, Photovoltaik oder die Kombination: Der Check zeigt, welche Lösung zu Ihrem Gebäude passt – umgesetzt wird sie von unserem geprüften Fachpartner.</p>
     </div>
     <div class="cards-3">
       <article class="l-card reveal">
@@ -505,9 +505,9 @@
           <ul>
             <li>Für Neubau, Bestand und Altbau</li>
             <li>Hydraulischer Abgleich inklusive</li>
-            <li>Förderung bis 70 % – Antrag durch uns</li>
+            <li>Bis zu 70 % Förderung möglich (BEG)</li>
           </ul>
-          <a class="more" href="#kontakt">Wärmepumpe anfragen →</a>
+          <a class="more" href="#kontakt">Check für Wärmepumpe starten →</a>
         </div>
       </article>
       <article class="l-card reveal d1">
@@ -523,7 +523,7 @@
             <li>0 % Mehrwertsteuer auf PV-Anlagen</li>
             <li>Monitoring per App</li>
           </ul>
-          <a class="more" href="#kontakt">Photovoltaik anfragen →</a>
+          <a class="more" href="#kontakt">Check für Photovoltaik starten →</a>
         </div>
       </article>
       <article class="l-card reveal d2">
@@ -539,7 +539,7 @@
             <li>Speicher &amp; Wallbox integrierbar</li>
             <li>Intelligentes Energiemanagement</li>
           </ul>
-          <a class="more" href="#kontakt">Kombi-Angebot anfragen →</a>
+          <a class="more" href="#kontakt">Check für die Kombi starten →</a>
         </div>
       </article>
     </div>
@@ -551,7 +551,7 @@
   <div class="container">
     <div class="sec-head reveal">
       <div class="kicker">Die Technik dahinter</div>
-      <h2>So arbeitet Ihre Wärmepumpe.</h2>
+      <h2>So arbeitet eine Wärmepumpe.</h2>
       <p>Aus 1 kWh Strom werden bis zu 5 kWh Wärme – über den Kältekreislauf. Die Animation zeigt den Prozess in Echtzeit.</p>
     </div>
     <div class="tech-grid">
@@ -565,13 +565,13 @@
               <stop offset="0" stop-color="#3b82c4"/><stop offset="1" stop-color="#6aa9dd"/>
             </linearGradient>
             <linearGradient id="hotG" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stop-color="#fb4d8c"/><stop offset="1" stop-color="#e02970"/>
+              <stop offset="0" stop-color="#ffc107"/><stop offset="1" stop-color="#b58900"/>
             </linearGradient>
             <marker id="arrB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
               <path d="M0 0 10 5 0 10z" fill="#3b82c4"/>
             </marker>
             <marker id="arrR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-              <path d="M0 0 10 5 0 10z" fill="#e02970"/>
+              <path d="M0 0 10 5 0 10z" fill="#b58900"/>
             </marker>
           </defs>
 
@@ -611,14 +611,14 @@
           </g>
           <g class="compressor-pulse">
             <circle cx="430" cy="330" r="34" fill="#0d0d12"/>
-            <circle cx="430" cy="330" r="34" fill="none" stroke="#fb4d8c" stroke-width="3"/>
-            <path d="M418 330 h24 M430 318 v24" stroke="#fb4d8c" stroke-width="3.5" stroke-linecap="round"/>
+            <circle cx="430" cy="330" r="34" fill="none" stroke="#ffc107" stroke-width="3"/>
+            <path d="M418 330 h24 M430 318 v24" stroke="#ffc107" stroke-width="3.5" stroke-linecap="round"/>
           </g>
-          <text x="430" y="392" text-anchor="middle" font-family="Manrope, sans-serif" font-size="12.5" font-weight="800" fill="#a8154f">2 · Verdichter</text>
+          <text x="430" y="392" text-anchor="middle" font-family="Manrope, sans-serif" font-size="12.5" font-weight="800" fill="#8a6a00">2 · Verdichter</text>
           <g>
-            <rect x="496" y="170" width="64" height="130" rx="10" fill="#fef0f5" stroke="#e02970" stroke-width="2.5"/>
-            <path d="M508 186 h40 M508 204 h40 M508 222 h40 M508 240 h40 M508 258 h40 M508 276 h40" stroke="#fb4d8c" stroke-width="2.5" stroke-linecap="round"/>
-            <text x="528" y="325" text-anchor="middle" font-family="Manrope, sans-serif" font-size="12.5" font-weight="800" fill="#a8154f">3 · Verflüssiger</text>
+            <rect x="496" y="170" width="64" height="130" rx="10" fill="#fff8e1" stroke="#b58900" stroke-width="2.5"/>
+            <path d="M508 186 h40 M508 204 h40 M508 222 h40 M508 240 h40 M508 258 h40 M508 276 h40" stroke="#ffc107" stroke-width="2.5" stroke-linecap="round"/>
+            <text x="528" y="325" text-anchor="middle" font-family="Manrope, sans-serif" font-size="12.5" font-weight="800" fill="#8a6a00">3 · Verflüssiger</text>
           </g>
           <g>
             <path d="M414 118 446 134 414 150 z" fill="#f6f6f8" stroke="#0d0d12" stroke-width="2.5"/>
@@ -643,16 +643,16 @@
               <path d="M560 210 h80"/>
               <path d="M560 262 h80"/>
             </g>
-            <path class="flow-water" d="M560 210 h80" fill="none" stroke="#e02970" stroke-width="4" stroke-linecap="round" marker-end="url(#arrR)"/>
+            <path class="flow-water" d="M560 210 h80" fill="none" stroke="#b58900" stroke-width="4" stroke-linecap="round" marker-end="url(#arrR)"/>
             <path class="flow-water" d="M640 262 h-80" fill="none" stroke="#3b82c4" stroke-width="4" stroke-linecap="round" marker-end="url(#arrB)"/>
-            <text x="600" y="196" text-anchor="middle" font-family="Manrope, sans-serif" font-size="12" font-weight="700" fill="#a8154f">Vorlauf 55 °C</text>
+            <text x="600" y="196" text-anchor="middle" font-family="Manrope, sans-serif" font-size="12" font-weight="700" fill="#8a6a00">Vorlauf 55 °C</text>
             <text x="600" y="286" text-anchor="middle" font-family="Manrope, sans-serif" font-size="12" font-weight="700" fill="#33566f">Rücklauf</text>
 
             <path d="M648 168 726 112 804 168 v130 a10 10 0 0 1-10 10 h-136 a10 10 0 0 1-10-10 z" fill="#ffffff" stroke="#c4c4cd" stroke-width="2.5"/>
             <path d="M640 172 726 108 812 172" fill="none" stroke="#0d0d12" stroke-width="5" stroke-linecap="round"/>
-            <rect x="672" y="216" width="108" height="64" rx="8" fill="#fef0f5" stroke="#e02970" stroke-width="2.5"/>
-            <path d="M688 224 v48 M706 224 v48 M724 224 v48 M742 224 v48 M760 224 v48" stroke="#fb4d8c" stroke-width="3" stroke-linecap="round"/>
-            <g stroke="#e02970" stroke-width="2.5" stroke-linecap="round" fill="none">
+            <rect x="672" y="216" width="108" height="64" rx="8" fill="#fff8e1" stroke="#b58900" stroke-width="2.5"/>
+            <path d="M688 224 v48 M706 224 v48 M724 224 v48 M742 224 v48 M760 224 v48" stroke="#ffc107" stroke-width="3" stroke-linecap="round"/>
+            <g stroke="#b58900" stroke-width="2.5" stroke-linecap="round" fill="none">
               <path class="heat-out" d="M700 206 q4 -7 0 -14"/>
               <path class="heat-out h2" d="M726 206 q4 -7 0 -14"/>
               <path class="heat-out h3" d="M752 206 q4 -7 0 -14"/>
@@ -663,7 +663,7 @@
           <g>
             <rect x="70" y="408" width="740" height="1.5" fill="#e2e2e8"/>
             <text x="70" y="444" font-family="Manrope, sans-serif" font-size="13.5" font-weight="800" fill="#0d0d12">1 kWh Strom + 4 kWh Umweltwärme = 5 kWh Heizwärme</text>
-            <text x="810" y="444" text-anchor="end" font-family="Manrope, sans-serif" font-size="13" font-weight="700" fill="#e02970">COP bis 5,0</text>
+            <text x="810" y="444" text-anchor="end" font-family="Manrope, sans-serif" font-size="13" font-weight="700" fill="#b58900">COP bis 5,0</text>
           </g>
         </svg>
       </div>
@@ -688,8 +688,8 @@
           </div>
         </div>
         <div class="tech-note">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="flex-shrink:0"><path d="M12 2 3 6v6c0 5 4 8.4 9 10 5-1.6 9-5 9-10V6l-9-4z" stroke="#e02970" stroke-width="2" stroke-linejoin="round"/><path d="m8.5 12 2.5 2.5 4.5-5" stroke="#e02970" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Jede Anlage wird per Heizlastberechnung nach DIN EN 12831 dimensioniert – keine Schätzwerte.
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="flex-shrink:0"><path d="M12 2 3 6v6c0 5 4 8.4 9 10 5-1.6 9-5 9-10V6l-9-4z" stroke="#b58900" stroke-width="2" stroke-linejoin="round"/><path d="m8.5 12 2.5 2.5 4.5-5" stroke="#b58900" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Unser Fachpartner dimensioniert jede Anlage per Heizlastberechnung nach DIN EN 12831 – keine Schätzwerte.
         </div>
       </div>
     </div>
@@ -756,7 +756,7 @@
           <div><div class="mv" id="oCo2">3,5 t</div><div class="ml">CO₂-Einsparung pro Jahr</div></div>
         </div>
         <a href="#kontakt" class="btn btn-pink calc-cta">Ergebnis kostenlos prüfen lassen</a>
-        <div class="calc-disclaimer">*Richtwerte ohne Energiepreissteigerungen und Förderung. Kesselwirkungsgrad: Erdgas 90 %, Heizöl 85 %. CO₂-Faktoren: Erdgas 0,20 / Heizöl 0,27 / Strommix 0,36 kg pro kWh. Verbindliche Werte liefert unsere Vor-Ort-Analyse mit Heizlastberechnung.</div>
+        <div class="calc-disclaimer">*Richtwerte ohne Energiepreissteigerungen und Förderung. Kesselwirkungsgrad: Erdgas 90 %, Heizöl 85 %. CO₂-Faktoren: Erdgas 0,20 / Heizöl 0,27 / Strommix 0,36 kg pro kWh. Verbindliche Werte liefert die Vor-Ort-Analyse des Fachpartners mit Heizlastberechnung.</div>
       </div>
     </div>
   </div>
@@ -767,14 +767,14 @@
   <div class="container">
     <div class="sec-head reveal">
       <div class="kicker" style="color:var(--pink)">Ergebnisse</div>
-      <h2>Woran Sie uns messen können.</h2>
-      <p>Durchschnittswerte unserer Kundenanlagen der letzten drei Jahre.</p>
+      <h2>Was ein Umstieg heute bringt.</h2>
+      <p>Durchschnittswerte aus Kundenanlagen unseres Fachpartners der letzten drei Jahre.</p>
     </div>
     <div class="num-grid">
       <div class="num-card reveal"><div class="v"><em data-count="1840">0</em>&nbsp;€</div><div class="l">Energiekosten-Ersparnis pro Jahr und Haushalt</div></div>
       <div class="num-card reveal d1"><div class="v"><em data-count="9">0</em>&nbsp;t</div><div class="l">CO₂-Einsparung pro Haushalt und Jahr</div></div>
       <div class="num-card reveal d2"><div class="v"><em data-count="6">0</em> Wochen</div><div class="l">von der Beauftragung bis zur Inbetriebnahme</div></div>
-      <div class="num-card reveal d3"><div class="v"><em data-count="98">0</em>&nbsp;%</div><div class="l">unserer Kunden empfehlen uns weiter</div></div>
+      <div class="num-card reveal d3"><div class="v"><em data-count="98">0</em>&nbsp;%</div><div class="l">Weiterempfehlungsquote der umgesetzten Projekte</div></div>
     </div>
   </div>
 </section>
@@ -783,15 +783,15 @@
 <section id="ablauf">
   <div class="container">
     <div class="sec-head center reveal">
-      <div class="kicker">Ihr Weg zur Anlage</div>
-      <h2>Strukturiert. Transparent. Termintreu.</h2>
+      <div class="kicker">So funktioniert's</div>
+      <h2>Vom Check zur fertigen Anlage.</h2>
     </div>
     <div class="timeline">
-      <div class="t-step reveal"><div class="tn">1</div><h4>Erstgespräch</h4><p>Kostenlose Analyse Ihres Verbrauchs und Gebäudes – vor Ort oder digital.</p></div>
-      <div class="t-step reveal d1"><div class="tn">2</div><h4>Planung</h4><p>Heizlastberechnung, Dachbelegung, Wirtschaftlichkeitsrechnung.</p></div>
-      <div class="t-step reveal d2"><div class="tn">3</div><h4>Festpreis-Angebot</h4><p>Inklusive Förder-Check – Sie wissen auf den Euro genau, was Sie investieren.</p></div>
-      <div class="t-step reveal d3"><div class="tn">4</div><h4>Montage</h4><p>Regionale Fachfirmen, in der Regel 2–4 Montagetage – koordiniert von uns.</p></div>
-      <div class="t-step reveal d3"><div class="tn">5</div><h4>Inbetriebnahme</h4><p>Einweisung, Dokumentation, Netzanmeldung, Wartungsplan – fertig.</p></div>
+      <div class="t-step reveal"><div class="tn">1</div><h4>Online-Check</h4><p>Sie beantworten in 2 Minuten ein paar Fragen zu Gebäude und Heizung – kostenlos.</p></div>
+      <div class="t-step reveal d1"><div class="tn">2</div><h4>Ersteinschätzung</h4><p>Wir prüfen Ihre Angaben und melden uns innerhalb von 24 h mit einer ehrlichen Einschätzung.</p></div>
+      <div class="t-step reveal d2"><div class="tn">3</div><h4>Beratung vor Ort</h4><p>Auf Ihren Wunsch: Termin mit unserem geprüften Fachpartner inkl. Heizlastberechnung.</p></div>
+      <div class="t-step reveal d3"><div class="tn">4</div><h4>Festpreis-Angebot</h4><p>Inklusive Förder-Check – Sie wissen auf den Euro genau, was Sie investieren.</p></div>
+      <div class="t-step reveal d3"><div class="tn">5</div><h4>Montage &amp; Inbetriebnahme</h4><p>Umsetzung durch den Fachpartner, in der Regel 2–4 Montagetage.</p></div>
     </div>
   </div>
 </section>
@@ -800,8 +800,9 @@
 <section class="refs" id="referenzen">
   <div class="container">
     <div class="sec-head reveal">
-      <div class="kicker">Referenzen</div>
-      <h2>Projekte, die für uns sprechen.</h2>
+      <div class="kicker">Projektbeispiele</div>
+      <h2>Projekte unseres Fachpartners.</h2>
+      <p>Umgesetzt von unserem geprüften Fachpartner im Rhein-Main-Gebiet.</p>
     </div>
     <div class="cards-3">
       <div class="ref-card reveal">
@@ -838,6 +839,7 @@
     <div class="sec-head center reveal">
       <div class="kicker">Kundenstimmen</div>
       <h2>Vertrauen entsteht durch Ergebnisse.</h2>
+      <p>Das sagen Kunden über Projekte, die unser Fachpartner umgesetzt hat.</p>
     </div>
     <div class="quote-row">
       <div class="q-card reveal">
@@ -868,24 +870,28 @@
     </div>
     <div class="faq-list reveal">
       <details open>
+        <summary>Was kostet mich der Check – und wozu verpflichte ich mich?</summary>
+        <div class="a">Nichts, und zu nichts. Der Online-Check und die Ersteinschätzung sind kostenlos und unverbindlich. Erst wenn Sie es ausdrücklich wünschen, stellen wir den Kontakt zu unserem geprüften Fachpartner her. Für die Vermittlung erhalten wir vom Fachpartner eine Vergütung – für Sie bleibt alles kostenlos.</div>
+      </details>
+      <details>
+        <summary>Werde ich danach mit Werbeanrufen bombardiert?</summary>
+        <div class="a">Nein. Sie erhalten genau eine Rückmeldung zu Ihrer Ersteinschätzung – telefonisch oder per E-Mail, wie Sie möchten. Ihre Daten werden nur mit Ihrer Einwilligung an unseren Fachpartner weitergegeben und nicht an sonstige Dritte verkauft.</div>
+      </details>
+      <details>
         <summary>Funktioniert eine Wärmepumpe auch im Altbau?</summary>
-        <div class="a">In den meisten Fällen ja. Entscheidend ist nicht das Baujahr, sondern die benötigte Vorlauftemperatur. Wir prüfen das mit einer Heizlastberechnung nach DIN EN 12831 – erst danach sprechen wir eine Empfehlung aus. Häufig genügen einzelne größere Heizkörper statt einer Komplettsanierung.</div>
+        <div class="a">In den meisten Fällen ja. Entscheidend ist nicht das Baujahr, sondern die benötigte Vorlauftemperatur. Unser Fachpartner prüft das mit einer Heizlastberechnung nach DIN EN 12831 – erst danach gibt es eine Empfehlung. Häufig genügen einzelne größere Heizkörper statt einer Komplettsanierung. Und wenn es sich nicht lohnt, sagen wir Ihnen das ehrlich.</div>
       </details>
       <details>
         <summary>Wie hoch ist die staatliche Förderung?</summary>
-        <div class="a">Für Wärmepumpen sind über die BEG-Förderung bis zu 70 % der Investitionskosten möglich (Grundförderung, Klimageschwindigkeits- und Einkommensbonus). Photovoltaik profitiert vom Nullsteuersatz (0 % MwSt.). Wir übernehmen die komplette Antragstellung für Sie.</div>
+        <div class="a">Für Wärmepumpen sind über die BEG-Förderung bis zu 70 % der Investitionskosten möglich – abhängig von Ihren persönlichen Voraussetzungen (Grundförderung, Klimageschwindigkeits- und Einkommensbonus). Photovoltaik profitiert vom Nullsteuersatz (0 % MwSt.). Die komplette Antragstellung übernimmt der Fachpartner.</div>
       </details>
       <details>
         <summary>Wie lange dauert die Installation?</summary>
-        <div class="a">Eine Wärmepumpe installieren unsere Fachfirmen in der Regel in 2–4 Montagetagen, eine PV-Anlage in 1–2 Tagen. Von der Beauftragung bis zur Inbetriebnahme vergehen im Schnitt sechs Wochen.</div>
+        <div class="a">Eine Wärmepumpe installiert der Fachpartner in der Regel in 2–4 Montagetagen, eine PV-Anlage in 1–2 Tagen. Von der Beauftragung bis zur Inbetriebnahme vergehen im Schnitt sechs Wochen.</div>
       </details>
       <details>
         <summary>Was passiert bei einem Stromausfall?</summary>
         <div class="a">Mit einem notstromfähigen Speichersystem versorgt Ihre PV-Anlage ausgewählte Stromkreise weiter. Ohne Speicher schaltet die Anlage aus Sicherheitsgründen ab – das ist gesetzlich vorgeschrieben.</div>
-      </details>
-      <details>
-        <summary>Übernehmen Sie auch Wartung und Service?</summary>
-        <div class="a">Ja. Jede Anlage erhält einen Wartungsplan, auf Wunsch mit Fernüberwachung. Störungen sehen wir häufig, bevor Sie sie bemerken – und beheben sie innerhalb garantierter Reaktionszeiten.</div>
       </details>
     </div>
   </div>
@@ -895,95 +901,147 @@
 <section id="kontakt">
   <div class="container">
     <div class="sec-head center reveal">
-      <div class="kicker">Kostenloses Angebot</div>
-      <h2>In 2 Minuten zum unverbindlichen Angebot.</h2>
+      <div class="kicker">Der kostenlose Check</div>
+      <h2>Finden Sie heraus, was in Ihrem Haus steckt.</h2>
     </div>
     <div class="contact-grid reveal">
       <div class="contact-info">
-        <h3>Wärmekraft</h3>
-        <p>Energie braucht Nähe. Vertrauen braucht Menschen. Wir melden uns innerhalb eines Werktags – mit einem konkreten Terminvorschlag.</p>
+        <h3>Heizwechsel</h3>
+        <p>Sie beantworten fünf kurze Fragen – wir melden uns innerhalb von 24 Stunden mit einer ehrlichen Ersteinschätzung. Alles Weitere entscheiden Sie.</p>
         <div class="ci-row">
-          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" stroke="#fb4d8c" stroke-width="2" stroke-linejoin="round"/></svg></div>
-          <div><b><a href="tel:+496934878599">069 / 348 785 99</a></b><span>Mo–Fr 9–16 Uhr</span></div>
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" stroke="#ffc107" stroke-width="2" stroke-linejoin="round"/></svg></div>
+          <div><b><a href="tel:+4917625041651">0176 / 250 416 51</a></b><span>Mo–Fr 9–16 Uhr</span></div>
         </div>
         <div class="ci-row">
-          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#fb4d8c" stroke-width="2"/><path d="m3 7 9 6 9-6" stroke="#fb4d8c" stroke-width="2" stroke-linejoin="round"/></svg></div>
-          <div><b><a href="mailto:hallo@waerme-kraft.de">hallo@waerme-kraft.de</a></b><span>Antwort innerhalb eines Werktags</span></div>
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#ffc107" stroke-width="2"/><path d="m3 7 9 6 9-6" stroke="#ffc107" stroke-width="2" stroke-linejoin="round"/></svg></div>
+          <div><b><a href="mailto:info@heizwechsel.de">info@heizwechsel.de</a></b><span>Antwort innerhalb von 24 h</span></div>
         </div>
         <div class="ci-row">
-          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z" stroke="#fb4d8c" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="#fb4d8c" stroke-width="2"/></svg></div>
-          <div><b>Hanauer Landstraße 291 B, 60314 Frankfurt a. M.</b><span>16+ Standorte in ganz Deutschland</span></div>
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2 3 6v6c0 5 4 8.4 9 10 5-1.6 9-5 9-10V6l-9-4z" stroke="#ffc107" stroke-width="2" stroke-linejoin="round"/><path d="m8.5 12 2.5 2.5 4.5-5" stroke="#ffc107" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><b>Ehrlich &amp; ergebnisoffen</b><span>Wenn sich der Umstieg (noch) nicht lohnt, sagen wir es Ihnen.</span></div>
         </div>
-        <a class="btn btn-wa" href="https://wa.me/4915119492409" target="_blank" rel="noopener">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35zM12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88a9.83 9.83 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.9 7c0 5.45-4.45 9.88-9.9 9.88zm8.42-18.3A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.15 1.59 5.95L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.47-8.4z"/></svg>
-          Direkt per WhatsApp anfragen
-        </a>
-        <div class="cert">Wärmekraft Heizsysteme GmbH · HRB 141683, Frankfurt a. M. · Vermittlung geprüfter regionaler Fachfirmen · Förderservice nach BEG</div>
+        <div class="cert">Heizwechsel ist ein Angebot der Volt Gas UG (haftungsbeschränkt), Berlin · Wir vermitteln Anfragen an geprüfte Fachpartner und erhalten dafür eine Vergütung – für Sie ist der Service kostenlos.</div>
       </div>
 
       <div class="funnel" id="funnel">
-        <h3>Kostenloses Angebot anfragen</h3>
+        <h3>Kostenlosen Check starten</h3>
         <p class="fp">Unverbindlich &amp; DSGVO-konform · dauert keine 2 Minuten</p>
         <div class="progress">
           <div class="pseg"><i id="p1" style="width:100%"></i></div>
           <div class="pseg"><i id="p2"></i></div>
           <div class="pseg"><i id="p3"></i></div>
-          <span class="plabel" id="pLabel">Schritt 1 von 3</span>
+          <div class="pseg"><i id="p4"></i></div>
+          <div class="pseg"><i id="p5"></i></div>
+          <span class="plabel" id="pLabel">Schritt 1 von 5</span>
         </div>
 
-        <!-- Schritt 1 -->
+        <!-- Schritt 1: Interesse -->
         <div class="fstep active" data-step="1">
           <div class="fq">Wofür interessieren Sie sich?</div>
           <div class="opt-grid">
             <button type="button" class="opt" data-field="interesse" data-value="Wärmepumpe"><span class="oi">🔥</span><b>Wärmepumpe</b><small>Heizung modernisieren</small></button>
             <button type="button" class="opt" data-field="interesse" data-value="Photovoltaik"><span class="oi">☀️</span><b>Photovoltaik</b><small>Eigenen Strom erzeugen</small></button>
             <button type="button" class="opt" data-field="interesse" data-value="Wärmepumpe + Photovoltaik"><span class="oi">⚡</span><b>Beides kombiniert</b><small>Maximale Unabhängigkeit</small></button>
-            <button type="button" class="opt" data-field="interesse" data-value="Allgemeine Beratung"><span class="oi">💬</span><b>Erst mal beraten lassen</b><small>Unverbindliches Gespräch</small></button>
+            <button type="button" class="opt" data-field="interesse" data-value="Neue Heizung"><span class="oi">🛠️</span><b>Neue Heizungsanlage</b><small>Alte Heizung ersetzen</small></button>
+            <button type="button" class="opt" data-field="interesse" data-value="Noch unklar"><span class="oi">💬</span><b>Noch unklar</b><small>Erst mal beraten lassen</small></button>
           </div>
         </div>
 
-        <!-- Schritt 2 -->
+        <!-- Schritt 2: Gebäude -->
         <div class="fstep" data-step="2">
-          <div class="fq">Ein paar Angaben zu Ihrem Gebäude:</div>
+          <div class="fq">Um welche Immobilie geht es?</div>
           <div class="opt-grid" style="margin-bottom:18px">
             <button type="button" class="opt" data-field="gebaeude" data-value="Einfamilienhaus"><span class="oi">🏠</span><b>Einfamilienhaus</b></button>
             <button type="button" class="opt" data-field="gebaeude" data-value="Doppel-/Reihenhaus"><span class="oi">🏘️</span><b>Doppel- / Reihenhaus</b></button>
             <button type="button" class="opt" data-field="gebaeude" data-value="Mehrfamilienhaus"><span class="oi">🏢</span><b>Mehrfamilienhaus</b></button>
-            <button type="button" class="opt" data-field="gebaeude" data-value="Gewerbe"><span class="oi">🏭</span><b>Gewerbe</b></button>
-          </div>
-          <div class="f-row">
-            <div class="f-field"><label for="fJahr">Baujahr (ca.)</label>
-              <select id="fJahr">
-                <option>nach 2010</option><option>1990–2010</option><option selected>1970–1990</option><option>vor 1970</option>
-              </select>
-            </div>
-            <div class="f-field"><label for="fPlz">Postleitzahl *</label><input id="fPlz" type="text" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" required placeholder="z. B. 60314"></div>
+            <button type="button" class="opt" data-field="gebaeude" data-value="Gewerbe"><span class="oi">🏭</span><b>Gewerbeimmobilie</b></button>
           </div>
           <div class="fnav">
             <button type="button" class="btn btn-back" data-back>← Zurück</button>
-            <button type="button" class="btn btn-pink" id="toStep3">Weiter →</button>
           </div>
         </div>
 
-        <!-- Schritt 3 -->
-        <form class="fstep" data-step="3" id="contactForm" novalidate>
-          <div class="fq">Wohin dürfen wir Ihr Angebot schicken?</div>
+        <!-- Schritt 3: Details (dynamisch je nach Interesse) -->
+        <div class="fstep" data-step="3">
+          <div class="fq">Ein paar Details zu Ihrem Gebäude:</div>
+          <div id="grpHeizung">
+            <div class="f-row">
+              <div class="f-field"><label for="fHeizart">Aktuelle Heizung</label>
+                <select id="fHeizart">
+                  <option selected>Erdgas</option><option>Heizöl</option><option>Strom / Nachtspeicher</option><option>Fernwärme</option><option>Sonstiges</option>
+                </select>
+              </div>
+              <div class="f-field"><label for="fAlter">Alter der Heizung</label>
+                <select id="fAlter">
+                  <option>unter 10 Jahre</option><option selected>10–15 Jahre</option><option>15–25 Jahre</option><option>über 25 Jahre</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div id="grpDach">
+            <div class="f-row">
+              <div class="f-field"><label for="fDach">Nutzbare Dachfläche (ca.)</label>
+                <select id="fDach">
+                  <option>unter 30 m²</option><option selected>30–60 m²</option><option>über 60 m²</option><option>Weiß ich nicht</option>
+                </select>
+              </div>
+              <div class="f-field"><label for="fWohnflaeche">Wohnfläche (ca.)</label>
+                <select id="fWohnflaeche">
+                  <option>unter 100 m²</option><option selected>100–150 m²</option><option>150–250 m²</option><option>über 250 m²</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="f-field"><label for="fJahr">Baujahr des Gebäudes (ca.)</label>
+            <select id="fJahr">
+              <option>Neubau (in Planung/Bau)</option><option>nach 2010</option><option>1990–2010</option><option selected>1970–1990</option><option>vor 1970</option>
+            </select>
+          </div>
+          <div class="fnav">
+            <button type="button" class="btn btn-back" data-back>← Zurück</button>
+            <button type="button" class="btn btn-pink" id="toStep4">Weiter →</button>
+          </div>
+        </div>
+
+        <!-- Schritt 4: Zeitraum + PLZ -->
+        <div class="fstep" data-step="4">
+          <div class="fq">Wann soll es losgehen – und wo steht das Gebäude?</div>
+          <div class="opt-grid" style="margin-bottom:18px">
+            <button type="button" class="opt opt-stay" data-field="zeitraum" data-value="So bald wie möglich"><span class="oi">🚀</span><b>So bald wie möglich</b></button>
+            <button type="button" class="opt opt-stay" data-field="zeitraum" data-value="In 3–6 Monaten"><span class="oi">🗓️</span><b>In 3–6 Monaten</b></button>
+            <button type="button" class="opt opt-stay" data-field="zeitraum" data-value="In 6–12 Monaten"><span class="oi">⏳</span><b>In 6–12 Monaten</b></button>
+            <button type="button" class="opt opt-stay" data-field="zeitraum" data-value="Erst mal informieren"><span class="oi">📖</span><b>Erst mal informieren</b></button>
+          </div>
+          <div class="f-field"><label for="fPlz">Postleitzahl des Objekts *</label><input id="fPlz" type="text" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" required placeholder="z. B. 60314"></div>
+          <div class="fnav">
+            <button type="button" class="btn btn-back" data-back>← Zurück</button>
+            <button type="button" class="btn btn-pink" id="toStep5">Weiter →</button>
+          </div>
+        </div>
+
+        <!-- Schritt 5: Kontakt -->
+        <form class="fstep" data-step="5" id="contactForm" novalidate>
+          <div class="fq">Wohin dürfen wir Ihre Ersteinschätzung schicken?</div>
           <div class="f-row">
             <div class="f-field"><label for="fName">Name *</label><input id="fName" type="text" required placeholder="Vor- und Nachname"></div>
-            <div class="f-field"><label for="fTel">Telefon *</label><input id="fTel" type="tel" required placeholder="Für den Terminvorschlag"></div>
+            <div class="f-field"><label for="fTel">Telefon *</label><input id="fTel" type="tel" required placeholder="Für die Ersteinschätzung"></div>
           </div>
           <div class="f-field"><label for="fMail">E-Mail *</label><input id="fMail" type="email" required placeholder="ihre@email.de"></div>
           <input type="text" id="fHoney" style="display:none" tabindex="-1" autocomplete="off">
+          <label style="display:flex;gap:10px;align-items:flex-start;font-size:.8rem;color:var(--muted);margin-top:4px;cursor:pointer">
+            <input type="checkbox" id="fConsent" required style="margin-top:3px;accent-color:var(--pink)">
+            <span>Ich willige ein, dass meine Angaben zur Erstellung einer Ersteinschätzung bzw. eines Angebots an den Fachpartner <b>Wärmekraft Heizsysteme GmbH</b> weitergegeben werden und dieser mich telefonisch oder per E-Mail kontaktieren darf. Diese Einwilligung kann ich jederzeit widerrufen. *</span>
+          </label>
           <div class="fnav">
             <button type="button" class="btn btn-back" data-back>← Zurück</button>
-            <button type="submit" class="btn btn-pink">Kostenloses Angebot anfordern</button>
+            <button type="submit" class="btn btn-pink">Kostenlose Ersteinschätzung anfordern</button>
           </div>
-          <div class="form-note">Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten gemäß unserer Datenschutzerklärung zu. Keine Weitergabe an Dritte.</div>
+          <div class="form-note">Details zur Verarbeitung Ihrer Daten finden Sie in unserer <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a>. Keine Weitergabe an sonstige Dritte.</div>
         </form>
 
         <!-- Erfolg -->
-        <div class="fstep" data-step="4">
-          <div class="form-success" style="display:block">✓ Vielen Dank! Ihre Anfrage ist eingegangen – wir melden uns innerhalb eines Werktags mit Ihrem Angebot.<br><br>Sie möchten nicht warten? <a href="https://wa.me/4915119492409" target="_blank" rel="noopener" style="color:#157a3d">Schreiben Sie uns direkt per WhatsApp →</a></div>
+        <div class="fstep" data-step="6">
+          <div class="form-success" style="display:block">✓ Vielen Dank! Ihre Anfrage ist eingegangen – Sie erhalten innerhalb von 24 Stunden Ihre persönliche Ersteinschätzung.</div>
         </div>
       </div>
     </div>
@@ -995,11 +1053,11 @@
   <div class="container">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a class="foot-logo" href="#top"><img src="assets/logo.png" alt="Wärmekraft Logo"></a>
-        <p>Strom. Wärme. Zukunft. Wärmepumpen, Photovoltaik und Speichersysteme – geplant, gefördert und installiert mit regionalen Fachfirmen.</p>
+        <a class="foot-logo" href="#top"><img src="assets/heizwechsel-logo.svg" alt="Heizwechsel Logo"></a>
+        <p>Erst prüfen. Dann entscheiden. Der kostenlose Erst-Check für Wärmepumpe, Photovoltaik und Heizungsmodernisierung – mit geprüften Fachpartnern für die Umsetzung.</p>
       </div>
       <div>
-        <h5>Leistungen</h5>
+        <h5>Lösungen</h5>
         <ul>
           <li><a href="#leistungen">Wärmepumpen</a></li>
           <li><a href="#leistungen">Photovoltaik</a></li>
@@ -1009,42 +1067,35 @@
         </ul>
       </div>
       <div>
-        <h5>Unternehmen</h5>
+        <h5>Informationen</h5>
         <ul>
-          <li><a href="#referenzen">Referenzen</a></li>
-          <li><a href="#stimmen">Kundenstimmen</a></li>
+          <li><a href="#ablauf">So funktioniert's</a></li>
+          <li><a href="#referenzen">Projektbeispiele</a></li>
           <li><a href="#faq">FAQ</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
+          <li><a href="#kontakt">Check starten</a></li>
+          <li><a href="partner.html">Partner werden</a></li>
         </ul>
       </div>
       <div>
         <h5>Kontakt</h5>
         <ul>
-          <li><a href="tel:+496934878599">069 / 348 785 99</a></li>
-          <li><a href="https://wa.me/4915119492409" target="_blank" rel="noopener">WhatsApp: 0151 194 924 09</a></li>
-          <li><a href="mailto:hallo@waerme-kraft.de">hallo@waerme-kraft.de</a></li>
-          <li>Hanauer Landstraße 291 B<br>60314 Frankfurt a. M.</li>
+          <li><a href="tel:+4917625041651">0176 / 250 416 51</a></li>
+          <li><a href="mailto:info@heizwechsel.de">info@heizwechsel.de</a></li>
           <li>Mo–Fr 9–16 Uhr</li>
         </ul>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Wärmekraft Heizsysteme GmbH · HRB 141683, Frankfurt a. M.</span>
-      <span><a href="https://waerme-kraft.de/impressum" target="_blank" rel="noopener">Impressum</a> &nbsp;·&nbsp; <a href="https://waerme-kraft.de/datenschutz" target="_blank" rel="noopener">Datenschutz</a></span>
+      <span>© 2026 Heizwechsel · Ein Angebot der Volt Gas UG (haftungsbeschränkt)</span>
+      <span><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="datenschutz.html">Datenschutz</a></span>
     </div>
   </div>
 </footer>
 
-<!-- Floating WhatsApp (Desktop) -->
-<a class="wa-float" href="https://wa.me/4915119492409" target="_blank" rel="noopener" aria-label="Per WhatsApp anfragen">
-  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35zM12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88a9.83 9.83 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.9 7c0 5.45-4.45 9.88-9.9 9.88zm8.42-18.3A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.15 1.59 5.95L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.47-8.4z"/></svg>
-</a>
-
 <!-- Mobile CTA-Leiste -->
 <div class="mobile-cta">
-  <a class="m-call" href="tel:+496934878599">📞 Anrufen</a>
-  <a class="m-wa" href="https://wa.me/4915119492409" target="_blank" rel="noopener">WhatsApp</a>
-  <a class="m-offer" href="#kontakt">Angebot sichern</a>
+  <a class="m-call" href="tel:+4917625041651">📞 Anrufen</a>
+  <a class="m-offer" href="#kontakt">Kostenlosen Check starten</a>
 </div>
 
 <script>
@@ -1206,14 +1257,24 @@
   calcReady = true;
 
   // ===== Lead-Funnel =====
-  const lead = { interesse: '', gebaeude: '' };
+  const lead = { interesse: '', gebaeude: '', zeitraum: '' };
   const fsteps = document.querySelectorAll('.fstep');
-  const segs = [$('p1'), $('p2'), $('p3')];
+  const segs = [$('p1'), $('p2'), $('p3'), $('p4'), $('p5')];
+  const TOTAL_STEPS = 5;
 
   function showStep(n) {
     fsteps.forEach(s => s.classList.toggle('active', +s.dataset.step === n));
     segs.forEach((seg, i) => seg.style.width = (i < n ? '100%' : '0%'));
-    $('pLabel').textContent = n <= 3 ? 'Schritt ' + n + ' von 3' : 'Fertig ✓';
+    $('pLabel').textContent = n <= TOTAL_STEPS ? 'Schritt ' + n + ' von ' + TOTAL_STEPS : 'Fertig ✓';
+  }
+
+  // Schritt 3 je nach Interesse konfigurieren:
+  // Heizungsfragen für Wärmepumpe/Heizung/Unklar, Dachfragen für PV, beides für die Kombi
+  function configStep3() {
+    const pv = lead.interesse === 'Photovoltaik' || lead.interesse === 'Wärmepumpe + Photovoltaik';
+    const heizung = lead.interesse !== 'Photovoltaik';
+    $('grpHeizung').style.display = heizung ? '' : 'none';
+    $('grpDach').style.display = pv ? '' : 'none';
   }
 
   document.querySelectorAll('.opt').forEach(btn => {
@@ -1222,13 +1283,16 @@
       lead[field] = btn.dataset.value;
       btn.parentElement.querySelectorAll('.opt').forEach(o => o.classList.remove('selected'));
       btn.classList.add('selected');
-      if (field === 'interesse') setTimeout(() => showStep(2), 250);
+      if (field === 'interesse') setTimeout(() => { configStep3(); showStep(2); }, 250);
+      if (field === 'gebaeude') setTimeout(() => showStep(3), 250);
+      // zeitraum: kein Auto-Weiter, da noch die PLZ ausgefüllt wird
     });
   });
 
-  $('toStep3').addEventListener('click', () => {
+  $('toStep4').addEventListener('click', () => showStep(4));
+  $('toStep5').addEventListener('click', () => {
     if (!$('fPlz').checkValidity()) { $('fPlz').reportValidity(); return; }
-    showStep(3);
+    showStep(5);
   });
 
   document.querySelectorAll('[data-back]').forEach(b => {
@@ -1238,9 +1302,76 @@
     });
   });
 
-  // Absenden (FormSubmit-Backend)
+  // Absenden (CRM + FormSubmit-Backend)
   const form = document.getElementById('contactForm');
   const FORM_ENDPOINT = 'https://formsubmit.co/ajax/' + ['karakuss', 'sezer'].join('.') + '@gmail' + '.com';
+  const CRM_ENDPOINT = 'https://volt-gas.de/vg/crm/lead';
+  // Interesse -> CRM-Sparte; "Beides" läuft als Wärmepumpe ein (Photovoltaik steht in der Notiz
+  // und kann im CRM per Cross-Sell ergänzt werden). "Neue Heizung" braucht die CRM-Sparte
+  // "heizung" – falls sie noch nicht angelegt ist, greift der Fallback ohne Sparte.
+  const CRM_VERTICAL = {
+    'Wärmepumpe': 'waermepumpe',
+    'Photovoltaik': 'solar',
+    'Wärmepumpe + Photovoltaik': 'waermepumpe',
+    'Neue Heizung': 'heizung'
+  };
+
+  function leadDetails() {
+    const parts = [
+      'Interesse: ' + (lead.interesse || '—'),
+      'Gebäude: ' + (lead.gebaeude || '—'),
+      'Baujahr: ' + $('fJahr').value
+    ];
+    if ($('grpHeizung').style.display !== 'none') {
+      parts.push('Heizung: ' + $('fHeizart').value + ' (' + $('fAlter').value + ')');
+    }
+    if ($('grpDach').style.display !== 'none') {
+      parts.push('Dachfläche: ' + $('fDach').value, 'Wohnfläche: ' + $('fWohnflaeche').value);
+    }
+    parts.push('Zeitraum: ' + (lead.zeitraum || '—'));
+    return parts;
+  }
+
+  function crmPayload() {
+    const params = new URLSearchParams(location.search);
+    const payload = {
+      source: 'landingpage-heizwechsel',
+      note: leadDetails().join(' | ') + ' | Einwilligung Weitergabe/Kontakt: erteilt ' + new Date().toISOString(),
+      landing_page: location.href.split('?')[0],
+      referrer: document.referrer || '',
+      contact: {
+        name: $('fName').value,
+        email: $('fMail').value,
+        phone: $('fTel').value,
+        plz: $('fPlz').value
+      }
+    };
+    if (CRM_VERTICAL[lead.interesse]) payload.vertical = CRM_VERTICAL[lead.interesse];
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'ttclid'].forEach(k => {
+      if (params.get(k)) payload[k] = params.get(k);
+    });
+    return payload;
+  }
+
+  async function sendToCrm() {
+    const payload = crmPayload();
+    let res = await fetch(CRM_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    // Fallback: unbekannte Sparte -> ohne Sparte einliefern (landet in der Standard-Sparte)
+    if (!res.ok && payload.vertical) {
+      delete payload.vertical;
+      res = await fetch(CRM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+    }
+    return res;
+  }
+
   form.addEventListener('submit', async e => {
     e.preventDefault();
     if (!form.checkValidity()) { form.reportValidity(); return; }
@@ -1249,28 +1380,35 @@
     btn.disabled = true;
     btn.textContent = 'Wird gesendet …';
     try {
-      const res = await fetch(FORM_ENDPOINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          _subject: 'Neuer Lead: ' + (lead.interesse || 'Anfrage') + ' (' + $('fPlz').value + ')',
-          _template: 'table',
-          _captcha: 'false',
-          Interesse: lead.interesse || '—',
-          Gebäude: lead.gebaeude || '—',
-          Baujahr: $('fJahr').value,
-          PLZ: $('fPlz').value,
-          Name: $('fName').value,
-          Telefon: $('fTel').value,
-          'E-Mail': $('fMail').value
-        })
+      const mailBody = {
+        _subject: 'Neuer Lead: ' + (lead.interesse || 'Anfrage') + ' (' + $('fPlz').value + ')',
+        _template: 'table',
+        _captcha: 'false',
+        Name: $('fName').value,
+        Telefon: $('fTel').value,
+        'E-Mail': $('fMail').value,
+        PLZ: $('fPlz').value
+      };
+      leadDetails().forEach(p => {
+        const idx = p.indexOf(': ');
+        mailBody[p.slice(0, idx)] = p.slice(idx + 2);
       });
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      showStep(4);
+      const [crmRes, mailRes] = await Promise.allSettled([
+        sendToCrm(),
+        fetch(FORM_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(mailBody)
+        })
+      ]);
+      // Erfolgreich, sobald der Lead mindestens einen Kanal erreicht hat
+      const ok = r => r.status === 'fulfilled' && r.value.ok;
+      if (!ok(crmRes) && !ok(mailRes)) throw new Error('Beide Kanäle fehlgeschlagen');
+      showStep(6);
     } catch (err) {
       btn.disabled = false;
-      btn.textContent = 'Kostenloses Angebot anfordern';
-      alert('Das Senden hat leider nicht geklappt. Bitte rufen Sie uns an (069 / 348 785 99) oder schreiben Sie an hallo@waerme-kraft.de.');
+      btn.textContent = 'Kostenlose Ersteinschätzung anfordern';
+      alert('Das Senden hat leider nicht geklappt. Bitte versuchen Sie es in ein paar Minuten erneut oder schreiben Sie an info@heizwechsel.de.');
     }
   });
 </script>
