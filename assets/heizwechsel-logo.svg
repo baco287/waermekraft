@@ -1,10 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="206" height="36" viewBox="0 0 206 36" role="img" aria-label="Heizwechsel Logo">
-  <circle cx="18" cy="18" r="16" fill="#ffc107"/>
-  <g stroke="#0d0d12" stroke-width="3" stroke-linecap="round" fill="none">
-    <path d="M10 12.5 h10.5"/>
-    <path d="M26 23.5 h-10.5"/>
+  <!-- Kreispfeile: schwarz oben, gelb unten -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M3.5 18 A14.5 14.5 0 0 1 29.1 8.7" stroke="#141414" stroke-width="4.2"/>
+    <path d="M32.5 18 A14.5 14.5 0 0 1 6.9 27.3" stroke="#f5a81c" stroke-width="4.2"/>
+    <path d="M10.5 14.5 H22.5" stroke="#141414" stroke-width="4.2"/>
+    <path d="M25.5 21.5 H13.5" stroke="#f5a81c" stroke-width="4.2"/>
+    <!-- Schwung-Linien -->
+    <path d="M28.5 3.6 Q33.2 6.4 34.8 10.4" stroke="#f5a81c" stroke-width="2"/>
+    <path d="M27.2 6.6 Q30.6 8.7 31.9 11.7" stroke="#f5a81c" stroke-width="2"/>
+    <path d="M7.5 32.4 Q2.8 29.6 1.2 25.6" stroke="#141414" stroke-width="2"/>
+    <path d="M8.8 29.4 Q5.4 27.3 4.1 24.3" stroke="#141414" stroke-width="2"/>
   </g>
-  <path d="M21 8.5 l6.5 4 -6.5 4 z" fill="#0d0d12"/>
-  <path d="M15 19.5 l-6.5 4 6.5 4 z" fill="#0d0d12"/>
-  <text x="42" y="24.5" font-family="Manrope, 'Segoe UI', system-ui, sans-serif" font-size="19" font-weight="800" letter-spacing="-0.5" fill="#0d0d12">Heiz<tspan fill="#dda400">wechsel</tspan></text>
+  <path d="M22 9.6 L30.6 14.5 L22 19.4 z" fill="#141414"/>
+  <path d="M14 16.6 L5.4 21.5 L14 26.4 z" fill="#f5a81c"/>
+  <text x="42" y="24.5" font-family="Manrope, 'Segoe UI', system-ui, sans-serif" font-size="19" font-weight="800" letter-spacing="-0.5" fill="#141414">Heiz<tspan fill="#f5a81c">wechsel</tspan></text>
 </svg>
